@@ -1,7 +1,7 @@
 <div class="animated fadeIn" class="animated fadeIn" style="width: 40%; height: 90%;;text-align: center; margin-left: 30%;">
     <div class="card">
         <div class="card-header">
-            <h2>ADD</h2>
+            <h2>Ajouter</h2>
           </div>
         <div class="card-body">
             <form [formGroup]="firstFormGroup">
@@ -41,6 +41,7 @@
                     <div>
                         <button mat-button [disabled]="plateform.value.length == 0" class="btn-success" (click)="genererPlateform()">Generer Plateform</button>
                     </div>
+                    
                   <!--   <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
                         <div *ngIf="elt=='Notoriété'"
                     style="width: 95%; margin-left: 3%;">
