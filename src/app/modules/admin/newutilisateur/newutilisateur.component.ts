@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { PlateformComponent } from '../plateform/plateform.component';
 
 @Component({
   selector: 'app-newutilisateur',
@@ -10,38 +9,38 @@ import { PlateformComponent } from '../plateform/plateform.component';
   styleUrls: ['./newutilisateur.component.scss']
 })
 export class NewutilisateurComponent implements OnInit {
+  message!:String;
+  var_natureinfo!: String;
+  tnatinfo!:String;
   firstFormGroup!: FormGroup;
-  var_objectifmacrom!:String;
+  isEditable = false;
 
   constructor(private _formBuilder: FormBuilder,private router: Router,
     public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.tnatinfo= new String(localStorage.getItem('tokenNATUREINFO'));
+   
     this.firstFormGroup = this._formBuilder.group({
  
-        sexe: ['', Validators.required],
-        age: ['', Validators.required],
-        objectifmacrom: ['', Validators.required],
-        plateform: ['', Validators.required],
-        frequence: ['', Validators.required],
-        contraintes: ['', Validators.required]
+        natureinfo: [this.tnatinfo, Validators.required],
+        
     });
   }
 
-  genererPlateform(){
-    this.var_objectifmacrom=this.firstFormGroup.get("objectifmacrom")?.value;
-    console.log(this.firstFormGroup.get("objectifmacrom")?.value,"gener plateform objectmacrom",this.var_objectifmacrom)
-    const dialogRef = this.dialog.open(PlateformComponent,
-      {
-        width: '80%',
-        height: '90%',
-        data: {var_objectifmacrom: this.var_objectifmacrom
+  newnatureinfo(){
+    this.var_natureinfo=this.firstFormGroup.get("natureinfo")?.value;
+    let tokenN: any
+    if(this.var_natureinfo.length!=0){
+      console.log("zertyui",this.var_natureinfo)
+      tokenN=this.var_natureinfo
+      localStorage.setItem('tokenNATUREINFO', tokenN); 
+      this.router.navigate(['/newsupportparution']);
+    }
+    else{
+      this.message="Champ avec (*) est obligatoire!";  
 
-        },}
-      );
+    }
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
 }

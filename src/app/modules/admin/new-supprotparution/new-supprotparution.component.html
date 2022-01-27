@@ -1,0 +1,31 @@
+<div class="animated fadeIn" class="animated fadeIn" style="width: 30%;text-align: center; margin-left: 30%;">
+    <div class="card">
+        <div class="card-header">
+            <h1>Ajouter</h1>
+          </div>
+        <div class="card-body">
+            <form [formGroup]="secondFormGroup">
+              <p *ngIf="message!=null" style="color: red;font-size: 12pt;">{{message}}</p>
+              <mat-form-field >
+                <mat-label style="font-size: 12pt;">Support parution * :</mat-label>
+                <select matNativeControl formControlName="supportparution" >
+                      <option></option>
+                      <option value="Page RS de l'entreprise ">Page RS de l'entreprise </option>
+                      <option value="Fil de discussion RS / Blog">Fil de discussion RS / Blog </option>
+                      <option value="Article Site d'actualité">Article Site d'actualité</option>
+                      <option value="Presse">Presse</option>
+                    </select>
+            </mat-form-field>
+              <div >
+                <button mat-button style="margin-left: -1%;" [routerLink]="['/newgam']"  class="btn-danger">retour</button>
+          
+                <button  mat-button (click)="newsupportparution()" 
+                class="btn btn-info" >suivant</button>
+           
+              </div>
+            </form>
+           
+      </div>
+             
+            </div>
+   </div>

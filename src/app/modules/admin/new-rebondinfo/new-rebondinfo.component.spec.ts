@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlateformComponent } from './plateform.component';
+import { NewRebondinfoComponent } from './new-rebondinfo.component';
 
-describe('PlateformComponent', () => {
-  let component: PlateformComponent;
-  let fixture: ComponentFixture<PlateformComponent>;
+describe('NewRebondinfoComponent', () => {
+  let component: NewRebondinfoComponent;
+  let fixture: ComponentFixture<NewRebondinfoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlateformComponent ]
+      declarations: [ NewRebondinfoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlateformComponent);
+    fixture = TestBed.createComponent(NewRebondinfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

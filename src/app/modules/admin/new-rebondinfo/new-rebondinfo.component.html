@@ -1,0 +1,30 @@
+<div class="animated fadeIn" class="animated fadeIn" style="width: 30%;text-align: center; margin-left: 30%;">
+    <div class="card">
+        <div class="card-header">
+            <h1>Ajouter</h1>
+          </div>
+        <div class="card-body">
+            <form [formGroup]="fourFormGroup">
+              <p *ngIf="message!=null" style="color: red;font-size: 12pt;">{{message}}</p>
+              <mat-form-field >
+                <mat-label style="font-size: 12pt;">Rebond de l'info * :</mat-label>
+                <select matNativeControl formControlName="rebondinfo" >
+                      <option></option>
+                      <option value="RAS">RAS</option>
+                      <option value="Effectif">Effectif</option>
+                      
+                    </select>
+            </mat-form-field>
+              <div >
+                <button mat-button style="margin-left: -2%;" [routerLink]="['/newperceptionsupportparution']"  class="btn-danger">retour</button>
+          
+                <button  mat-button (click)="newrebondinfo()" 
+                class="btn btn-info" >Recapitulatif</button>
+           
+              </div>
+            </form>
+           
+      </div>
+             
+            </div>
+   </div>

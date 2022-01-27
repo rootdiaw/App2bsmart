@@ -1,138 +1,27 @@
-<div class="animated fadeIn" class="animated fadeIn" style="width: 40%; height: 90%;;text-align: center; margin-left: 30%;">
+<div class="animated fadeIn" class="animated fadeIn" style="width: 31%; height: 70%;;text-align: center; margin-left: 30%;">
     <div class="card">
         <div class="card-header">
-            <h2>ADD</h2>
+            <h2>Ajouter</h2>
           </div>
         <div class="card-body">
             <form [formGroup]="firstFormGroup">
-
-                      <mat-form-field >
-                        <mat-label >Sexe *:</mat-label>
-                        <mat-select matNativeControl formControlName="sexe" multiple> 
-                              <mat-option value="M,F">Masculin, Féminin </mat-option>
-                              <mat-option value="m">Masculin </mat-option>
-                              <mat-option value="F">Féminin </mat-option>                             
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field >
-                        <mat-label >Age *:</mat-label>
-                        <mat-select matNativeControl formControlName="age" multiple> 
-                              <mat-option value="15 - 29 ans">15 - 29 ans </mat-option>
-                              <mat-option value="30 - 44 ans">30 - 44 ans </mat-option>
-                              <mat-option value="45 - 60 ans">45 - 60 ans </mat-option>                             
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field >
-                        <mat-label >Objectif Macrom *:</mat-label>
-                        <mat-select matNativeControl formControlName="objectifmacrom" multiple #plateform> 
-                            <mat-option value="Notoriété">Notoriété</mat-option>
-                            <mat-option value="Création de communauté">Création de communauté</mat-option>
-                            <mat-option value="Capital sympathie">Capital sympathie</mat-option> 
-                            <mat-option value="Recrutement">Recrutement</mat-option>
-                            <mat-option value="Didactique">Didactique</mat-option>
-                            <mat-option value="Relactionnel">Relactionnel</mat-option>  
-                            <mat-option value="Personal branding (B2B)">Personal branding (B2B)</mat-option>
-                            <mat-option value="Relations publiques">Relations publiques</mat-option>
-                            <mat-option value="Connexion avec des Leaders d'opinion">Connexion avec des Leaders d'opinion</mat-option>                           
-                            <mat-option value="Création de trafic">Création de trafic</mat-option>
-                            <mat-option value="Conversion">Conversion</mat-option>                            
-                        </mat-select>
-                    </mat-form-field>
-                    <div>
-                        <button mat-button [disabled]="plateform.value.length == 0" class="btn-success" (click)="genererPlateform()">Generer Plateform</button>
-                    </div>
-                  <!--   <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div *ngIf="elt=='Notoriété'"
-                    style="width: 95%; margin-left: 3%;">
-                            <h3 > {{elt}}</h3>
-                             <p class="card-header" style="font-size: 18pt;" >                           
-                        Palteforme: Facebook, Youtube
-                     </p>    
-                    </div>
-                    </div>
-                    <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div *ngIf="elt=='Didactique'"
-                        style="width: 95%; margin-left: 3%;"><h3> {{elt}}</h3>
-                        <p class="card-header"  style="font-size: 18pt;">
-                            Palteforme: Youtube, Pinterest 
-                         </p>    
-                        </div></div>               
-                    <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div *ngIf="elt=='Relactionnel'"
-                    style="width: 95%; margin-left: 3%;"><h3> {{elt}}</h3>
-                    <p class="card-header"style="font-size: 18pt;" >
-                        Palteforme: Twitter, Linkedin 
-                     </p>    
-                    </div>
-                    </div>
-                    <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div *ngIf="elt=='Connexion avec des Leaders d\'opinion'"
-                    style="width: 95%; margin-left: 3%;"><h3> {{elt}}</h3>
-                    <p class="card-header" style="font-size: 18pt;" >
-                        Palteforme:  Twitter, Linkedin 
-                     </p>    
-                    </div>
-                    </div>
-                    <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div *ngIf="elt=='Relations publiques'"
-                        style="width: 95%; margin-left: 10%;"><h3> {{elt}}</h3>
-                        <p class="card-header" style="font-size: 18pt;">
-                            Palteforme: Twitter, Linkedin 
-                         </p>    
-                        </div>
-                    </div>
-                    <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div  *ngIf="elt=='Création de communauté'"
-                    style="width: 95%; margin-left: 3%;"><h3> {{elt}}</h3>
-                    <p class="card-header" style="font-size: 13pt;" >
-                        Palteforme: Facebook, Instagram, Tik ToK, Snap 
-                     </p>    
-                    </div>
-                    </div>                  
-                    <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div *ngIf="elt=='Capital sympathie'"
-                    style="width: 95%; margin-left: 3%;"><h3> {{elt}}</h3>
-                    <p class="card-header" style="font-size: 13pt;" >
-                        Palteforme: Facebook, Instagram, Tik ToK, Snap 
-                     </p>    
-                    </div>
-                    </div>
-                    
-                    <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div *ngIf="elt=='Recrutement'"
-                    style="width: 95%; margin-left: 3%;"><h3> {{elt}}</h3>
-                    <p class="card-header" style="font-size: 14pt;" >
-                        Palteforme: Facebook, Youtube, Linkedin 
-                     </p>    
-                    </div>
-                    </div>                    
-                    <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div *ngIf="elt=='Personal branding (B2B)'"
-                        style="width: 95%; margin-left: 3%;"><h3> {{elt}}</h3>
-                        <p class="card-header" style="font-size: 15pt;">
-                            Palteforme: Youtube, Twitter, Linkedin 
-                         </p>    
-                        </div>
-                    </div>                
-                       <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                        <div *ngIf="elt=='Création de trafic'"
-                      style="width: 95%; margin-left: 3%;"><h3> {{elt}}</h3>
-                        <p class="card-header" style="font-size: 15pt;" >
-                            Palteforme: Facebook, Youtube, Pinterest 
-                         </p>      
+                <p *ngIf="message!=null" style="color: red;font-size: 12pt;">{{message}}</p>
+                <mat-form-field >
+                  <mat-label style="font-size: 12pt;">Nature Info *:</mat-label>
+                  <select matNativeControl formControlName="natureinfo" >
+                        <option></option>
+                        <option value="Fausse - Fake news">Fausse - Fake news</option>
+                        <option value="Mi-figue Mi-raisin - bashing">Mi-figue Mi-raisin - bashing</option>
+                        <option value="100% vrai - knocking">100% vrai - knocking</option>
+                    </select>
+              </mat-form-field>
+                <div >
+                  <button mat-button style="margin-left: -1%;" [routerLink]="['/freq']"  class="btn-danger">retour</button>
+            
+                  <button  mat-button (click)="newnatureinfo()" 
+                  class="btn btn-info" >suivant</button>
+             
                 </div>
-                    </div>
-                     
-                <div *ngFor="let  elt of firstFormGroup.value.objectifmacrom ">
-                    <div *ngIf="elt=='Conversion'"
-                     style="width: 95%; margin-left: 3%;"><h3> {{elt}}</h3>
-                            <p class="card-header"style="font-size: 14pt;" >
-                               Palteforme:  Facebook, Youtube, Pinterest 
-                            </p>     
-                    </div>
-                </div>               
-                   --> 
-                    
                       </form>
     </div>             
     </div>

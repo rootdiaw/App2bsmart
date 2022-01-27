@@ -21,10 +21,13 @@ import {MatMenuModule} from '@angular/material/menu';
 
 import { MatCardModule } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
-import { PlateformComponent } from './plateform/plateform.component';
+import { NewSupprotparutionComponent } from './new-supprotparution/new-supprotparution.component';
+import { NewPerceptionsupComponent } from './new-perceptionsup/new-perceptionsup.component';
+import { NewRebondinfoComponent } from './new-rebondinfo/new-rebondinfo.component';
+import { FicherecaputComponent } from './ficherecaput/ficherecaput.component';
 
 @NgModule({
-  declarations: [NewutilisateurComponent, PlateformComponent],
+  declarations: [NewutilisateurComponent,  NewSupprotparutionComponent,  NewPerceptionsupComponent, NewRebondinfoComponent, FicherecaputComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
